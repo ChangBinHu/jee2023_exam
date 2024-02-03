@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+  <title>上传图书封面</title>
+</head>
+<body>
+    <span>上传图书封面</span>
+    <form action="/book/upload" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="book-id" th:value="${bookId}">
+        <input type="file" name="file" required>
+
+        <p><button type="submit">提交</button></p>
+    </form>
+</body>

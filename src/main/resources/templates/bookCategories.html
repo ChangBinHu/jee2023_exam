@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+    <title>图书类别</title>
+</head>
+<body>
+    <span>图书类别：</span>
+    <br/>
+    <table>
+        <tr>
+            <td>编号</td>
+            <td>名称</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="bookCategory,index:${bookCategories}">
+            <td><span th:text="${bookCategory.id}"/></td>
+            <td><span th:text="${bookCategory.name}"/></td>
+
+            <td>
+                <a th:href="@{/book/category?category-id={categoryId}(categoryId=${bookCategory.id})}">图书列表</a>
+                <a th:href="@{/book/toAdd?category-id={categoryId}(categoryId=${bookCategory.id})}">添加图书</a>
+            </td>
+        </tr>
+    </table>
+</body>

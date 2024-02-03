@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+  <title>图书</title>
+</head>
+<body>
+    <span>图书：</span>
+    <br/>
+    <table>
+        <tr>
+            <td>编号</td>
+            <td>书名</td>
+            <td>价格</td>
+            <td>简介</td>
+            <td>封面图片</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="book,index:${books}">
+            <td><span th:text="${book.id}"/></td>
+            <td><span th:text="${book.name}"/></td>
+            <td><span th:text="${book.price}"/></td>
+            <td><span th:text="${book.description}"/></td>
+            <td><span th:text="${book.cover}"/></td>
+
+            <td>
+                <a th:href="@{/book/toUpload?book-id={bookId}(bookId=${book.id})}">上传图片</a>
+            </td>
+        </tr>
+    </table>
+</body>

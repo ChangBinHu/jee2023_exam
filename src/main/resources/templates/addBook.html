@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+  <title>添加图书</title>
+</head>
+<body>
+    <span>添加图书</span>
+    <form action="/book/add" method="post">
+        <p>书名：<input type="text" id="name" name="name"></p>
+        <input type="hidden" name="categoryId" th:value="${categoryId}">
+        <p>价格：<input type="number" id="price" name="price"></p>
+        <p>简介：<input type="text" id="description" name="description"></p>
+
+        <p><button type="submit">提交</button></p>
+    </form>
+</body>
